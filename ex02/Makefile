@@ -17,9 +17,10 @@ OBJDIR = .Obj/
 
 MAIN =	main.cpp
 
-CLASS = Bureaucrat.cpp Form.cpp
-
-INC = Bureaucrat.hpp Form.hpp 
+CLASS = Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp 
+# 
+INC = Bureaucrat.hpp AForm.hpp PresidentialPardonForm.hpp ShrubberyCreationForm.hpp RobotomyRequestForm.hpp 
+#
 
 # -----------SRCS-----------#
 

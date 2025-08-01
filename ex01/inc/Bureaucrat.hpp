@@ -23,7 +23,7 @@ class Bureaucrat {
 		int	getGrade() const;
 		void	promote();
 		void	demote();
-		void	signForm(Form& form) throw();
+		void	signForm(Form& form) ;
 	private:
 		const std::string	_name;
 		int					_grade;

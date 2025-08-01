@@ -1,22 +1,38 @@
 #include "Bureaucrat.hpp"
-#include "Form.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+
 int main () {
+	srand(time(NULL));
 	try {
-		Bureaucrat David("David", 15);
-		Bureaucrat Julian("Julian", 52);
-		Form	Contract("Location", 25, 45);
-		Form	Contract2("Eviction", 12, 25);
+		Bureaucrat David("David", 145);
+		Bureaucrat Julian("Julian", 137);
+		Bureaucrat Iris("Iris", 45);
+		Bureaucrat Mona("Mona", 25);
+		Bureaucrat Boss("Boss", 5);
 
-		Contract2 = Contract;
+		AForm	*tree = new ShrubberyCreationForm("Home");
+		AForm	*robot = new RobotomyRequestForm("Bender");
+		AForm	*pres = new PresidentialPardonForm("Homer Simpson");
 
-		std::cout << Contract << std::endl << David << std::endl;
-		Julian.signForm(Contract);
-		David.signForm(Contract);
-		Julian.signForm(Contract);
-		std::cout << Contract << std::endl << Contract2 << std::endl;
-		Contract2 = Contract;
-		Julian.signForm(Contract2);
-		std::cout << Contract2 << std::endl;
+		David.signForm(*tree);
+		David.executeForm(*tree);
+
+		Julian.executeForm(*tree);
+		Julian.executeForm(*tree);
+
+		Julian.signForm(*robot);
+		Iris.signForm(*robot);
+		Iris.executeForm(*robot);
+
+		Mona.signForm(*pres);
+		Mona.executeForm(*pres);
+		Boss.executeForm(*pres);
+
+		delete tree;
+		delete robot;
+		delete pres;
 	}
 	catch (std::exception & e) {
 		std::cout << "Exception caught ! " << e.what() << std::endl;

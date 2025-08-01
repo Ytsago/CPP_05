@@ -47,7 +47,7 @@ void Bureaucrat::demote() {
 	this->_grade++;
 }
 
-void	Bureaucrat::signForm(Form& form) throw() {
+void	Bureaucrat::signForm(Form& form) {
 	if (form.getStatus()) {
 		std::cout << form.getName() << " is already signed" << std::endl;
 		return ;
