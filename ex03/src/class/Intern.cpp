@@ -34,11 +34,14 @@ AForm*	Intern::makeForm(std::string name, std::string target) const {
 			newForm = new PresidentialPardonForm(target);
 			break;
 		default:
-			std::cout << "Unknow form !" << std::endl;
-			return NULL;
+			throw NoFormException();
 	}
 	std::cout << "Intern creates " << newForm->getName() << std::endl;
 	return newForm;
+}
+
+const char*	Intern::NoFormException::what() const throw() {
+	return "there is no such form";
 }
 
 Intern::~Intern() {};
