@@ -37,7 +37,7 @@ HEADER = $(addprefix $(INCDIR), $(INC))
 
 LIBS =	
 
-NAME = Order66
+NAME = GetMeCoffee
 
 # -----------RULES-----------#
 
